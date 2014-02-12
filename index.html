@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Mobile first, desktop last</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/mobile.css" rel="stylesheet">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
 	<script>
@@ -9,7 +10,7 @@
 	</script>
 	<script src="js/loader.js"></script>
 	<script>
-		App.loader("desktop-styles", "all and (min-width: 760px)", [
+		App.loader("desktop-styles", "all and (min-width: 800px)", [
 			"css/desktop.css"
 		]);
 	</script>
