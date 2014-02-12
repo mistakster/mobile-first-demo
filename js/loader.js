@@ -24,7 +24,7 @@
 				for (i = 0; i < files.length; i++) {
 					yepnope.injectCss(files[i]);
 				}
-				LL.loader[name] = 2;
+				App.loader[name] = 2;
 				return;
 			}
 
