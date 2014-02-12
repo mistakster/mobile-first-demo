@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobile first, desktop last</title>
+	<link href="css/mobile.css" rel="stylesheet">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+	<script>
+		var App = {};
+	</script>
+	<script src="js/loader.js"></script>
+	<script>
+		App.loader("desktop-styles", "all and (min-width: 760px)", [
+			"css/desktop.css"
+		]);
+	</script>
+</head>
+<body>
+
+	<div>
+		Content here
+	</div>
+
+</body>
+</html>

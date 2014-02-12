@@ -1,0 +1,7 @@
+body:before {
+    content: "Mobile first";
+}
+
+body {
+    background: white;
+}
