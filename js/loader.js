@@ -20,6 +20,8 @@
 				files = [files];
 			}
 
+			// It’s essential to load set of styles as soon as possible
+			// to prevent flickering and extra repainting
 			var i, result = true;
 			for (i = 0; i < files.length; i++) {
 				result = result && /\.css(\?.*)?$/.test(files[i]);
@@ -28,18 +30,22 @@
 				for (i = 0; i < files.length; i++) {
 					yepnope.injectCss(files[i]);
 				}
-				App.loader[name] = 2;
+				complete();
 				return;
 			}
 
+			// If we get a mixed list of CSS and JS then load them lazily
 			App.loader[name] = 1;
 			yepnope({
 				load: files,
-				complete: function () {
-					App.loader[name] = 2;
-					mql.removeListener(loader);
-				}
+				complete: complete
 			});
+		}
+		function complete() {
+			App.loader[name] = 2;
+			mql.removeListener(loader);
+			// remove all references to objects
+			mql = files = null;
 		}
 	};
 
