@@ -16,6 +16,10 @@
 		function loader() {
 			if (App.loader[name]) return;
 
+			if (typeof files == "string") {
+				files = [files];
+			}
+
 			var i, result = true;
 			for (i = 0; i < files.length; i++) {
 				result = result && /\.css(\?.*)?$/.test(files[i]);
