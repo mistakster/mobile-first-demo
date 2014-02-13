@@ -1,11 +1,23 @@
-@media all and (min-width: 800px) {
+@media all and (min-width: 720px) {
+
+    body:before {
+        content: "Tablet in between";
+    }
+
+    body {
+        background: #ffccee;
+    }
+
+}
+
+@media all and (min-width: 1024px) {
 
     body:before {
         content: "Desktop last";
     }
 
     body {
-        background: yellow;
+        background: #ffffcc;
     }
 
 }

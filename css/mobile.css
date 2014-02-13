@@ -1,7 +1,13 @@
+body {
+    background: white;
+}
+
 body:before {
     content: "Mobile first";
 }
 
-body {
-    background: white;
+@media all and (min-width: 480px) {
+    body:before {
+        content: "Mobile first (landscape)";
+    }
 }
